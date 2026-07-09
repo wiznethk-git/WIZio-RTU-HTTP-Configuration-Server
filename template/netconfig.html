@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIZio-RTU</title>
+    <meta name="description" content="A brief description of your webpage.">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>   
+    <main>
+        <div class = "index-section">
+            <p style = "padding: 0.2em 2em; font-weight: bold; font-size: 20px; text-align: center;"><a href = "/" class = "home-index">WIZio-RTU</a></p>
+            <hr style="border: 1px; border-style: solid; border-color: #293649;">
+            <div class = "index-catalog">
+                <a href = '/netconfig' class = "index-item index-chosen"><i>🌐</i>Network<br>Configuration</a>
+                <a href = '/io' class = "index-item"><i>⚡</i>I/O Control</a>
+                <a href = '/analog_io' class = "index-item"><i>📈</i>Analog I/O</a>
+                <a href = '/serial' class = "index-item"><i>🔌</i>Serial Test</a>
+                <a href = '/storage' class = "index-item"><i>💾</i>Storage Test</a>
+            </div>
+        </div>
+        </div>
+        <div class = "main-content">
+            <h1 style = 'padding: 0.5em 0em;'>Network Configuration</h1>
+            <div class = "section-block netconfig">
+                <div>
+                    <span>Network Address Mode</span>
+                    <div style = 'display: flex; flex-direction: row; column-gap: 1em; align-content: center;' id = 'radio-container'> 
+                        <div>
+                            <input type="radio" id="dhcp" name="network_type" value="DHCP">
+                            <label for="dhcp">DHCP</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="static" name="network_type" value="Static">
+                            <label for="static">Static</label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span> IP Address: </span>
+                    <br>
+                    <input type="text" class = "input" id = "input-ip" disabled value="0.0.0.0">
+                </div>
+                <div>
+                    <span> Subnet Mask: </span>
+                    <br>
+                    <input type="text" class = "input" id = "input-mask"disabled value="0.0.0.0">
+                </div>
+                <div>
+                    <span> Default Gateway: </span>
+                    <br>
+                    <input type="text" class = "input" id = "input-gateway" disabled value="0.0.0.0">
+                </div>
+                <div>
+                    <span> DNS Server: </span>
+                    <br>
+                    <input type="text" class = "input" id = "input-dns" disabled value="0.0.0.0">
+                </div>
+                <div>                
+                    <button id = 'btn-netconfig'> Save & Apply </button >
+                </div>
+                
+                <div class = 'error-msg-container' hidden>
+                    <span  id = 'netconfig-error' class = 'error-message'></span>
+                </div>    
+            </div>
+
+            <footer style = "font-size: small;">
+                <p>&copy; 2026 WIZnet H.K.</p>
+            </footer>
+        </div>
+    </main>
+    
+
+    
+    <script src="/js/netconfig.js" defer></script>
+</body>
+</html>

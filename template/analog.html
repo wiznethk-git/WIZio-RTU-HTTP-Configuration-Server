@@ -1,0 +1,176 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIZio-RTU</title>
+    <meta name="description" content="A brief description of your webpage.">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>   
+    <main>
+        <div class = "index-section">
+            <p style = "padding: 0.2em 2em; font-weight: bold; font-size: 20px; text-align: center;"><a href = "/" class = "home-index">WIZio-RTU</a></p>
+            <hr style="border: 1px; border-style: solid; border-color: #293649;">
+            <div class = "index-catalog">
+                <a href = '/netconfig' class = "index-item"><i>🌐</i>Network<br>Configuration</a>
+                <a href = '/io' class = "index-item"><i>⚡</i>I/O Control</a>
+                <a href = '/analog_io' class = "index-item index-chosen"><i>📈</i>Analog I/O</a>
+                <a href = '/serial' class = "index-item"><i>🔌</i>Serial Test</a>
+                <a href = '/storage' class = "index-item"><i>💾</i>Storage Test</a>
+            </div>
+        </div>
+        </div>
+        <div class = "main-content">
+            <h1>Analog inputs and outputs</h1>
+            <!-- Analog Inputs -->
+            <div class = 'section-block'>
+            	<p class = "section-heading">Analog Inputs (Channels 0-3)</p>
+                <!-- Block Analog 0 -->
+            	<div class = "analog-channel">
+            		<div class = "analog-heading">
+            			<p style = "margin: 5px 0px;">Channel 0</p>
+            			<select id = "ai-mode-0">
+            				<option value = "voltage">Voltage (0-10V)</option>
+            				<option value = "current" selected>Current (0-20mA)</option>
+            			</select>
+            		</div>
+                    <div class = "slider-progress-container">
+                        <div class = "slider-track"></div>  
+                        <div id= "ai-progress-0" class="slider-progress-bar" style="width: 0%"></div>
+                        <span id = "ai-value-0" class = "progress-value">0.00 mA</span>
+            	    </div>
+                    <div class="progress-scale">
+                        <span id="ai-min-0" class="scale-min">0mA</span>
+                        <span id="ai-mid-0" class="scale-mid">10mA</span>
+                        <span id="ai-max-0" class="scale-max">20mA</span>
+                    </div>
+                </div>
+                <!-- Block Analog 1 -->
+                <div class = "analog-channel">
+                    <div class = "analog-heading">
+                        <p style = "margin: 5px 0px;">Channel 1</p>
+                        <select id = "ai-mode-1">
+                            <option value = "voltage">Voltage (0-10V)</option>
+                            <option value = "current" selected>Current (0-20mA)</option>
+                        </select>
+                    </div>
+                    <div class = "slider-progress-container">
+                        <div class = "slider-track"></div>  
+                        <div id= "ai-progress-1" class="slider-progress-bar" style="width: 0%"></div>
+                        <span id = "ai-value-1" class = "progress-value">0.00 mA</span>
+                    </div>
+                    <div class="progress-scale">
+                        <span id="ai-min-1" class="scale-min">0mA</span>
+                        <span id="ai-mid-1" class="scale-mid">10mA</span>
+                        <span id="ai-max-1" class="scale-max">20mA</span>
+                    </div>
+                </div>
+                <!-- Block Analog 2 -->
+                <div class = "analog-channel">
+                    <div class = "analog-heading">
+                        <p style = "margin: 5px 0px;">Channel 2</p>
+                        <select id = "ai-mode-2">
+                            <option value = "voltage" selected>Voltage (0-10V)</option>
+                            <option value = "current">Current (0-20mA)</option>
+                        </select>
+                    </div>
+                    <div class = "slider-progress-container">
+                        <div class = "slider-track"></div>  
+                        <div id= "ai-progress-2" class="slider-progress-bar" style="width: 0%"></div>
+                        <span id = "ai-value-2" class = "progress-value">0.00 V </span>
+                    </div>
+                    <div class="progress-scale">
+                        <span id="ai-min-2" class="scale-min">0V</span>
+                        <span id="ai-mid-2" class="scale-mid">5V</span>
+                        <span id="ai-max-2" class="scale-max">10V</span>
+                    </div>
+                </div>
+                <!-- Block Analog 3 -->
+                <div class = "analog-channel">
+                    <div class = "analog-heading">
+                        <p style = "margin: 5px 0px;">Channel 3</p>
+                        <select id = "ai-mode-3">
+                            <option value = "voltage" selected>Voltage (0-10V)</option>
+                            <option value = "current">Current (0-20mA)</option>
+                        </select>
+                    </div>
+                    <div class = "slider-progress-container">
+                        <div class = "slider-track"></div>  
+                        <div id= "ai-progress-3" class="slider-progress-bar" style="width: 0%"></div>
+                        <span id = "ai-value-3" class = "progress-value">0.00 V</span>
+                    </div>
+                    <div class="progress-scale">
+                        <span id="ai-min-3" class="scale-min">0V</span>
+                        <span id="ai-mid-3" class="scale-mid">5V</span>
+                        <span id="ai-max-3" class="scale-max">10V</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analog Outputs -->
+            <div class = 'section-block analog-block'>
+            	<p class = "section-heading">Analog Outputs (Channels 0-1)</p>
+                <!-- Block Analog Ouptut 0 -->   
+                <div class="analog-channel">
+                    <p style = "margin: 5px 0px;">Channel 0</p>
+                    <div class="ao-control">
+                        <div class="slider-progress-container">
+                            <div class="slider-track"></div>
+                            <div id="ao-progress-0" class="slider-progress-bar" style="width: 0%"></div>
+                            <div id="ao-value-0" class="progress-value">0.00 V</div>
+                            <input type="range" id="ao-slider-0" min="0" max="10" step="0.01" value="0" class="integrated-slider">
+                        </div>
+                    </div>
+                    <div class="progress-scale">
+                        <span class="scale-min">0V</span>
+                        <span class="scale-mid">5V</span>
+                        <span class="scale-max">10V</span>
+                    </div>
+
+                    <div class="ao-control-row">
+                        <div class="ao-input-with-unit">
+                            <input type="number" id="ao-input-0" min="0" max="10" step="0.01" value="0.00" class="ao-input">
+                            <span class="ao-unit">V</span>
+                        </div>
+                        <button id="ao-set-0">设置</button>
+                    </div>
+                </div>
+
+                <!-- Block Analog Ouptut 1 -->   
+                <div class="analog-channel">
+                    <p style = "margin: 5px 0px;">Channel 1</p>
+                    <div class="ao-control">
+                        <div class="slider-progress-container">
+                            <div class="slider-track"></div>
+                            <div id="ao-progress-1" class="slider-progress-bar" style="width: 0%"></div>
+                            <div id="ao-value-1" class="progress-value">0.00 V</div>
+                            <input type="range" id="ao-slider-1" min="0" max="10" step="0.01" value="0" class="integrated-slider">
+                        </div>
+                    </div>
+                    <div class="progress-scale">
+                        <span class="scale-min">0V</span>
+                        <span class="scale-mid">5V</span>
+                        <span class="scale-max">10V</span>
+                    </div>
+
+                    <div class="ao-control-row">
+                        <div class="ao-input-with-unit">
+                            <input type="number" id="ao-input-1" min="0" max="10" step="0.01" value="0.00" class="ao-input">
+                            <span class="ao-unit">V</span>
+                        </div>
+                        <button id="ao-set-1">设置</button>
+                    </div>
+                </div>
+            </div>
+            <footer style = "font-size: small;">
+                <p>&copy; 2026 WIZnet H.K.</p>
+            </footer>
+        </div>
+    </main>
+    
+
+    
+    <script src="/js/analog.js" defer></script>
+</body>
+</html>

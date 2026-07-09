@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIZio-RTU</title>
+    <meta name="description" content="A brief description of your webpage.">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>   
+    <main>
+        <div class = "index-section">
+            <p style = "padding: 0.2em 2em; font-weight: bold; font-size: 20px; text-align: center;"><a href = "/" class = "home-index">WIZio-RTU</a></p>
+            <hr style="border: 1px; border-style: solid; border-color: #293649;">
+            <div class = "index-catalog">
+                <a href = '/netconfig' class = "index-item"><i>🌐</i>Network<br>Configuration</a>
+                <a href = '/io' class = "index-item"><i>⚡</i>I/O Control</a>
+                <a href = '/analog_io' class = "index-item"><i>📈</i>Analog I/O</a>
+                <a href = '/serial' class = "index-item index-chosen"><i>🔌</i>Serial Test</a>
+                <a href = '/storage' class = "index-item"><i>💾</i>Storage Test</a>
+            </div>
+        </div>
+        <div class = "main-content">
+            <h1>Serial Port Transmission Test</h1>
+            <div class = "section-block serial">
+                <p style = "margin-bottom: 1em;" class = "section-heading">Serial Port 3</p>
+                <div style = "margin-top: 1px;"class = "message-box" id = "serial-messages"> </div>
+                <div class="send-area">
+                    <textarea id="serial-input" placeholder="Send data..." data-sharkid="__0"></textarea>
+                    <button id="serial-send" onclick = "onClickSendBtn(this);">Send</button>
+                </div>
+            </div>
+            <footer style = "font-size: small;">
+                <p>&copy; 2026 WIZnet H.K.</p>
+            </footer>
+        </div>
+    </main>
+    
+
+    
+    <script src="/js/serial.js" defer></script>
+</body>
+</html>
