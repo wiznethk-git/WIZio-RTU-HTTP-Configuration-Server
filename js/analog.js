@@ -1,6 +1,9 @@
 const MAX_AOUT = 2;
 const MAX_AIN = 4;
 
+const MAX_AI_VOLT = 10; // V
+const MAX_AI_CURR = 20; // mA
+
 
 function onRecvAnalogIn(data){
 	for (const [key, item] of Object.entries(data)) {
@@ -20,8 +23,9 @@ function onRecvAnalogIn(data){
 			midValue.textContent = '5V';
 			maxValue.textContent = '10V';
 
-			value.textContent = parseFloat(item.value).toFixed(2) + 'V';
-			progress.style.width = parseFloat(item.value).toFixed(2) / 10 * 100 + '%';
+			const measuredVoltage = Math.min(MAX_AI_VOLT,parseFloat(item.value).toFixed(2));
+			value.textContent = measuredVoltage + 'V';
+			progress.style.width = measuredVoltage / 10 * 100 + '%';
 			options[0].selected = true;
 			options[1].selected = false;
 
@@ -31,8 +35,9 @@ function onRecvAnalogIn(data){
 			midValue.textContent = '10mA';
 			maxValue.textContent = '20mA';
 
-			value.textContent = parseFloat(item.value).toFixed(2) + 'mA';	
-			progress.style.width = parseFloat(item.value).toFixed(2) / 20 * 100 + '%';
+			const measuredCurrent = Math.min(MAX_AI_CURR,parseFloat(item.value).toFixed(2));
+			value.textContent = measuredCurrent + 'mA';	
+			progress.style.width = measuredCurrent / 20 * 100 + '%';
 			options[0].selected = false;
 			options[1].selected = true;
 
